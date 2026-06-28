@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  
+  --color-primary-blue: #0b57d0;
+  --color-primary-blue-hover: #0842a0;
+  
+  --color-card-blue: #1a73e8;
+  --color-card-green: #188038;
+  --color-card-red: #d93025;
+  --color-card-purple: #8ab4f8; /* this will be a purple shade */
+}
+
+/* Custom base styles to roughly match the font/feel */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* For smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scrollUpAndSettle {
+  0% { transform: translateY(80%); opacity: 0; }
+  70% { transform: translateY(-4%); opacity: 0.95; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-scroll-settle {
+  animation: scrollUpAndSettle 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Shaba reports — clean document print */
+@media print {
+  @page {
+    margin: 1.2cm;
+    size: A4 landscape;
+  }
+
+  body {
+    background: white !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Hide app chrome when printing from any route */
+  aside,
+  header,
+  [data-app-sidebar],
+  [data-app-header] {
+    display: none !important;
+  }
+
+  main {
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  #shaba-report-document {
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+  }
+
+  .print\\:hidden {
+    display: none !important;
+  }
+}
