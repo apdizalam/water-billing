@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE } from '../services/api';
 import { Printer, FileText } from 'lucide-react';
 
-const API = 'http://localhost:5000/api';
+const API = API_BASE;
 
 const getClientName = (bill) =>
   bill.customer?.fullName ||

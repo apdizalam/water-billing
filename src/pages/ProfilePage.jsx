@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE } from '../services/api';
 
 export default function ProfilePage() {
   const navigate = useNavigate();
@@ -52,11 +53,11 @@ export default function ProfilePage() {
         const payload = { fullName: displayName, email: email };
         const userId = stored.id || stored._id;
         if (userId) {
-          await axios.put(`http://localhost:5000/api/managers/${userId}`, payload).catch(() => null);
+          await axios.put(`${API_BASE}/managers/${userId}`, payload).catch(() => null);
         }
       } else {
         const payload = { name: displayName, email: email };
-        await axios.put('http://localhost:5000/api/admin/profile', payload).catch(() => null);
+        await axios.put(`${API_BASE}/admin/profile`, payload).catch(() => null);
       }
       
       // Fire global storage update notification event to update Navbar/Sidebar instantly

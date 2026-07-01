@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE } from '../services/api';
 import {
   Users,
   CheckCircle2,
@@ -12,7 +13,7 @@ import {
   FileText,
 } from 'lucide-react';
 
-const API = 'http://localhost:5000/api';
+const API = API_BASE;
 
 const getClientName = (bill) =>
   bill.customer?.fullName ||
