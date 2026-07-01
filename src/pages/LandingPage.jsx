@@ -131,7 +131,7 @@ const LandingPage = () => {
               Kala soco biilladaada, xoojiso lacag uruurinta, isla markaana si sahlan u maamul macaamiisha.
             </h2>
             <p className="max-w-2xl text-lg leading-8 text-slate-600">
-              SHaaba Water Billing System waxay si gaar ah u qaabeynaysaa adeegsiga adeegyada biyaha si aad si hufan u hesho xog sax ah, warbixino iyo awood buuxda oo mobile payment ah.
+              SHaaba Water Billing 
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               <button
