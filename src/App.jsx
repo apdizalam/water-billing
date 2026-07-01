@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
+import LandingPage from './pages/LandingPage';
 import DashboardPage from './pages/DashboardPage';
 import BillingPage from './pages/Billing';
 import RegisterManagerPage from './pages/RegisterManagerPage';
@@ -64,6 +65,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/*" element={
             <ProtectedRoute>
               <AppContent />
